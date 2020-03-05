@@ -1,0 +1,72 @@
+﻿<Page x:Class="Final_Project.Clients"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Final_Project"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProfilePage">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Menu x:Name="menuNavigation" VerticalAlignment="Stretch" Background="#645e7d9e" HorizontalAlignment="Left" Width="192">
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="114"/>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <Separator BorderThickness="0.5" Margin="0,5,0,10" HorizontalAlignment="Stretch" Height="1"/>
+            <Button x:Name="btnEmployee" Content="Employee" Width="100" Height="24" Margin="0,0,1,0" Click="btnEmployee_Click"/>
+            <Button x:Name="btnInventory" Content="Inventory" Width="100" Height="24" Margin="0,0,1,0" Click="btnInventory_Click"/>
+            <Button x:Name="btnClient" Content="Clients" Width="100" Height="24" Margin="0,0,1,0" Click="btnClients_Click"  IsEnabled="False"/>
+            <Button x:Name="btnOrders" Content="Orders" Width="100" Height="24" Margin="0,0,1,0" Click="BtnOrders_Click"/>
+            <Button x:Name="btnLogout" Content="Logout" Width="100" Height="24" Click="btnLogout_Click"/>
+        </Menu>
+        <Grid x:Name="gridContent" Margin="192,0,0,0" Background="#649e7f5e">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Header="Clients" Padding="5,5,5,5" HorizontalAlignment="Left" Height="148" Margin="9,292,0,0" VerticalAlignment="Top" Width="589">
+                <DataGrid x:Name="dgClients" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="DataGrid_SelectionChanged"/>
+            </GroupBox>
+            <ToolBar Padding="1,1,1,1" HorizontalAlignment="Left" Height="32" Margin="10,260,0,0" VerticalAlignment="Top" Width="588">
+                <Button x:Name="btnNewClient" Content="Add New Client" Click="BtnNewClient_Click" BorderBrush="Gray" Margin="1,1,1,1"/>
+                <Button x:Name="btnEditClient" Content="Edit Info" Click="BtnEditClient_Click" BorderBrush="Gray" Margin="1,1,1,1" IsEnabled="False"/>
+                <Button x:Name="btnRemoveClient" Content="Remove Client" Click="BtnRemoveClient_Click" BorderBrush="Gray" Margin="1,1,1,1"/>
+                <Separator Margin="5,5,5,5"/>
+                <TextBox x:Name="txtFilter" Width="120" VerticalAlignment="Stretch" BorderBrush="Black"/>
+                <Button x:Name="btnFilter" Content="Filter" Click="btnFilter_Click" BorderBrush="Gray"/>
+                <Separator Margin="5,5,5,5"/>
+                <Button x:Name="btnRefresh" Content="Refresh" Click="btnRefresh_Click" BorderBrush="Gray" HorizontalAlignment="Right" Margin="1,1,1,1"/>
+            </ToolBar>
+            <GroupBox Header="Details" HorizontalAlignment="Left" Height="245" Margin="9,10,0,0" VerticalAlignment="Top" Width="589">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="299"/>
+                        <ColumnDefinition Width="299"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="lblClientName" Content="Client Name" Height="43" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="184" FontSize="14" FontWeight="UltraBlack" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                    <Label x:Name="lblClientID" Content="ID:" Grid.Column="0" Grid.Row="1"/>
+                    <Label x:Name="lblClientContactName" Content="Contact: " Grid.Row="2"/>
+                    <Label x:Name="lblClientContactPhone" Content="Phone: " Grid.Column="0" Grid.Row="3"/>
+                    <Label x:Name="lblClientContactEmail" Content="Email: " Grid.Column="0" Grid.Row="4"/>
+                    <Label x:Name="lblClientStreet" Content="Address: " Grid.Column="1" Grid.Row="1"/>
+                    <Label x:Name="lblClientCityState" Content="City/State: " Grid.Column="1" Grid.Row="2"/>
+                    <Label x:Name="lblClientZip" Content="ZipCode: " Grid.Column="1" Grid.Row="3"/>
+                    <Label x:Name="lblClientCountry" Content="Country: " Grid.Column="1" Grid.Row="4"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Page>

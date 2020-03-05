@@ -1,0 +1,55 @@
+﻿<Window x:Class="Final_Project.addInventoryItem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Final_Project"
+        mc:Ignorable="d"
+        Title="addInventoryItem" Height="450" Width="300">
+
+    
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Label x:Name="lblCategory" Content="Category:" Height="24" HorizontalAlignment="Stretch" Margin="2,2,2,2"/>
+            <Label x:Name="lblManufacturer" Content="Manufacturer:" Height="24" HorizontalAlignment="Stretch" Margin="2,2,2,2"/>
+            <Label x:Name="lblModel" Content="Model Name:" Height="24" HorizontalAlignment="Stretch" Margin="2,2,2,2"/>
+            <Label x:Name="lblModelN" Content="Model Number:" Height="24" HorizontalAlignment="Stretch" Margin="2,2,2,2"/>
+            <Label x:Name="lblMemorySize" Content="Memory Size:" Height="24" HorizontalAlignment="Stretch" Margin="2,2,2,2"/>
+            <Label x:Name="lblMemoryType" Content="Memory Type:" Height="24" HorizontalAlignment="Stretch" Margin="2,2,2,2"/>
+            <Label x:Name="lblTestStatus" Content="Test Status:" Height="24" HorizontalAlignment="Stretch" Margin="2,2,2,2"/>
+            <Label x:Name="lblStorage" Content="Disk Capacity:" Height="24" HorizontalAlignment="Stretch" Margin="2,2,2,2"/>
+            <Label x:Name="lblDescription" Content="Description:" Height="24" HorizontalAlignment="Stretch" Margin="2,2,2,2"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <ComboBox x:Name="cbxCategory" Grid.Column="1" HorizontalAlignment="Stretch" Height="24" Margin="2,2,2,2">
+                <ComboBoxItem IsSelected="True">Server</ComboBoxItem>
+                <ComboBoxItem>Network</ComboBoxItem>
+                <ComboBoxItem>Memory</ComboBoxItem>
+                <ComboBoxItem>Storage</ComboBoxItem>
+                <ComboBoxItem>Processor</ComboBoxItem>
+                <ComboBoxItem>Other</ComboBoxItem>
+            </ComboBox>
+            <TextBox x:Name="txtManufacturer" HorizontalAlignment="Stretch" Height="24" Margin="2,2,2,2"/>
+            <TextBox x:Name="txtmodelName" HorizontalAlignment="Stretch" Height="24" Margin="2,2,2,2"/>
+            <TextBox x:Name="txtmodelNumber" HorizontalAlignment="Stretch" Height="24" Margin="2,2,2,2"/>
+            <TextBox x:Name="txtmemorySize" HorizontalAlignment="Stretch" Height="24" Margin="2,2,2,2"/>
+            <TextBox x:Name="txtmemoryType" HorizontalAlignment="Stretch" Height="24" Margin="2,2,2,2"/>
+            <ComboBox x:Name="cbxTestStatus" HorizontalAlignment="Stretch" Height="24" Margin="2,2,2,2">
+                <ComboBoxItem IsSelected="True">None</ComboBoxItem>
+                <ComboBoxItem>Needed</ComboBoxItem>
+                <ComboBoxItem>Pass</ComboBoxItem>
+                <ComboBoxItem>Fail</ComboBoxItem>
+            </ComboBox>
+            <TextBox x:Name="txtStorage" HorizontalAlignment="Stretch" Height="24" Margin="2,2,2,2"/>
+            <TextBox x:Name="txtDescription" HorizontalAlignment="Stretch" Height="92" Margin="2,2,2,2"/>
+        </StackPanel>
+        <Button x:Name="btnConfirm" Content="Confirm" Grid.Column="1" HorizontalAlignment="Left" Margin="10,386,0,0" VerticalAlignment="Top" Width="75" Click="btnConfirm_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Margin="108,386,0,0" VerticalAlignment="Top" Width="75" Click="btnCancelClick"/>
+        <Canvas Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="361,83,-261,0" VerticalAlignment="Top" Width="100"/>
+
+    </Grid>
+</Window>
