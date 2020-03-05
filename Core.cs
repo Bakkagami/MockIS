@@ -27,7 +27,7 @@ namespace Final_Project
             {
                 string connString = string.Format(GetProvider(), "Server={0};Port={1};" +
                     "User Id={2};Password={3};Database={4};",
-                    "68.20.15.125", "5432", username, password, "GiDe");
+                    "68.20.15.125", "5432", username, password, "MockIS");
 
                 conn = new NpgsqlConnection(connString);
                 conn.Open();                
@@ -161,7 +161,7 @@ namespace Final_Project
         public static DataTable LoadInventory()
         {        
             DataTable dt = new DataTable();
-            string sQuery = "SELECT * FROM inventory WHERE sold != 'SOLD'";
+            string sQuery = "SELECT * FROM inventory WHERE sold IS NULL OR sold != 'SOLD'";
             using (da = new NpgsqlDataAdapter(sQuery, conn)) 
             {
                 da.Fill(dt);

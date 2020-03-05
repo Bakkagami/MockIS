@@ -25,7 +25,6 @@ namespace Final_Project
         public Login()
         {
             InitializeComponent();
-            
         }
 
         private void BnLogin_Click(object sender, RoutedEventArgs e)
@@ -34,16 +33,6 @@ namespace Final_Project
             {
                 this.Content = new EmployeePage();
             }
-        }
-
-        private void tbUsername_IsKeyboardFocusedChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-
-        }
-
-        private void tbPassword_IsKeyboardFocusedChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-
         }
     }
 }
